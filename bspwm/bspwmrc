@@ -1,0 +1,25 @@
+#! /usr/bin/fish
+
+pgrep -x sxhkd > /dev/null || sxhkd &
+nitrogen --restore &
+picom &
+/home/devinr/.config/polybar/launch.sh &
+
+bspc monitor -d ffox code game term video misc
+bspc config border_width         0
+bspc config window_gap          25
+
+bspc config normal_border_color "#002233"
+bspc config focused_border_color "#003322"
+
+bspc config split_ratio          0.50
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+
+bspc rule -a Alacritty desktop='^4'
+bspc rule -a firefox desktop='^1'
+
+bspc rule -a mplayer2 state=floating
+bspc rule -a Kupfer.py focus=on
+bspc rule -a Screenkey manage=off
+bspc rule -a astromenace desktop='^3'

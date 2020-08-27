@@ -1,0 +1,145 @@
+/**
+ * User: Rasi
+ * Copyright: Rasmus Steinke
+ */
+
+ configuration {
+	display-drun:    "Activate: ";
+	display-run:     "Execute: ";
+	display-window:  "Window: ";
+}
+
+/* global settings and color variables */
+* {
+    blue:        #A7c6E2;
+    blue-trans:  #A7c6e2aa;
+    darkblue:    #005F87;
+    white:       #FFFFFF;
+    green:       #00330088;
+    black:       #000000;
+    grey:        #444444;
+    orange:      #FFD391;
+    dark-orange: #FFA664;
+    light-grey:  #F5F5F5;
+    medium-grey: #D0D0D0;
+    dark-grey:   #002B36;
+    urgent:      #D75F00;
+    active:      #005F87;
+    transparent: #A7c6E233;
+    spacing: 0em;
+    font: "Source Code Pro Regular 11";
+    padding: 0px;
+    background-color: @A7c6E2;
+    line-style: "none";
+    border: 0;
+}
+
+prompt-box {
+	background-color: @transparent;
+}
+
+prompt {
+	background-color: @transparent;
+	text-color: @white;
+}
+
+window {
+    border-radius: 10;
+    background-color: @transparent;
+    border: 0;
+    border-color: #00000000;
+}
+mainbox {
+    children: [inputbar, listview];
+    padding: 0px;
+    background-color: @transparent;
+    color: @grey;
+    spacing: 0%;
+
+}
+
+listview {
+    // Looks.
+    border-radius: 10px;
+    border: 5px 5px 5px 5px;
+    padding: 20px 20px 20px 20px;
+    margin: 20px 30px 30px 30px;
+    background-color: @blue;
+    // Enable scrollbar
+    scrollbar: false;
+    scrollbar-width: 5px;
+    fixed-height: true;
+    reverse: false;
+    color: #000000;
+    spacing: 0.3em;
+    columns: 3;
+    expand: true;
+}
+element {
+    border: 0px;
+    padding: 0px;
+    margin: 0px;
+    color: @black;
+    background-color: @blue;
+}
+element normal.normal {
+    color: @black;
+    background-color: @blue;
+}
+element normal.urgent {
+    color: @urgent;
+    background-color: @blue;
+}
+element normal.active {
+    color: @active;
+    background-color: @blue;
+}
+element selected.normal {
+    border-radius: 0px;
+    color: @black;
+    background-color: @darkblue;
+}
+element selected.urgent {
+    color: @light-grey;
+    background-color: @urgent;
+}
+element selected.active {
+    color: @light-grey;
+    background-color: @active;
+}
+element alternate.normal {
+    color: @black;
+    background-color: @blue;
+}
+element alternate.urgent {
+    color: @urgent;
+    background-color: @medium-grey;
+}
+element alternate.active {
+    color: @active;
+    background-color: @medium-grey;
+}
+inputbar {
+    spacing: 0;
+    border: 0px 0px 2px 0px;
+    border-radius: 0px;
+    padding: 5px 10px 5px 35px;
+    background-color: #00330088;
+    color: @black;
+    end: false;
+}
+
+
+prompt normal.normal {
+    background-color: #00330088;
+    color: #A7c6E2;
+    padding: 0px;
+}
+
+case-indicator normal.normal {
+    background-color: #00330088;
+    color: #A7c6E2;
+    padding: 0px;
+}
+
+
